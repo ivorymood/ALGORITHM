@@ -2,7 +2,7 @@
 
 int main()
 {
-	char my_string[100] = {0,};
+	char my_string[101] = {0,};
 
 	while (fgets(my_string, sizeof(my_string), stdin))
 	{
