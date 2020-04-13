@@ -2,8 +2,6 @@
 #pragma warning(disable: 4996)
 #include <stdio.h>
 
-using namespace std;
-
 int main()
 {
 	int N;
