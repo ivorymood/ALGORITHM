@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-	char input[101];
+	char input[11];
 	while (scanf("%10s", input) != EOF)
 	{
 		printf("%s\n", input);
