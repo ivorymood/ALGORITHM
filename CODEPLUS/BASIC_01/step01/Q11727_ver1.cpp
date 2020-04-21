@@ -7,7 +7,7 @@ const int DIV = 10007;
 const int MAX = 1000;
 int D[MAX + 1];
 
-// 점화식 : D[n] = D[n - 1] + D[n - 2] * 2;
+// 점화식 : D[n] = D[n - 1] + D[n - 2] * 2; 
 int make_tile(int n)
 {
 	if (D[n] > 0)
