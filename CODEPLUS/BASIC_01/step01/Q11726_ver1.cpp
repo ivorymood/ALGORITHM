@@ -1,4 +1,4 @@
-//https://www.acmicpc.net/problem/11726
+ï»¿//https://www.acmicpc.net/problem/11726
 #include <iostream>
 
 using namespace std;
@@ -7,14 +7,14 @@ const int DIV = 10007;
 const int MAX = 1000;
 int D[MAX + 1];
 
-// Á¡È­½Ä : D[n] = D[n - 1] + D[n - 2]
+// ì í™”ì‹ : D[n] = D[n - 1] + D[n - 2]
 int make_tile(int n)
 {
 	if (D[n] > 0)
 	{
 		return D[n];
 	}
-	// Á¾·áÁ¶°Ç
+	// ì¢…ë£Œì¡°ê±´
 	if (n <= 1)
 	{
 		return D[n] = 1;
