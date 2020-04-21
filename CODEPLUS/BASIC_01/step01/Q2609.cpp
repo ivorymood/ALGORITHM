@@ -1,11 +1,11 @@
-//https://www.acmicpc.net/problem/2609
+ï»¿//https://www.acmicpc.net/problem/2609
 #include <iostream>
 
 using namespace std;
 
 /*
-	À¯Å¬¸®µå È£Á¦¹ı
-	a % b = r ÀÏ¶§, GCD(a, b) = GCD(b, r)
+	ìœ í´ë¦¬ë“œ í˜¸ì œë²•
+	a % b = r ì¼ë•Œ, GCD(a, b) = GCD(b, r)
 */
 int GCD(int A, int B)
 {
