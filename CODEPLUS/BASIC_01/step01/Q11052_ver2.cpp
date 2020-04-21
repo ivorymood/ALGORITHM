@@ -1,4 +1,4 @@
-//https://www.acmicpc.net/problem/11052
+ï»¿//https://www.acmicpc.net/problem/11052
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -20,7 +20,7 @@ int main()
 		cin >> cost[i];
 	}
 
-	// Á¡È­½Ä : D[n] = max(D[n - i] + P[i])
+	// ì í™”ì‹ : D[n] = max(D[n - i] + P[i])
 	vector<int> max_cost(n + 1);
 	for (int i = 1; i <= n; i++)
 	{
