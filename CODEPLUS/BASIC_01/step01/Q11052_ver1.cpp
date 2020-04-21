@@ -1,4 +1,4 @@
-//https://www.acmicpc.net/problem/11052
+ï»¿//https://www.acmicpc.net/problem/11052
 #include <iostream>
 
 using namespace std;
@@ -7,7 +7,7 @@ const int MAX = 1000;
 int cost[MAX + 1];
 int max_cost[MAX + 1];
 
-// Á¡È­½Ä : D[n] = max(D[n - i] + P[i])
+// ì í™”ì‹ : D[n] = max(D[n - i] + P[i])
 int get_max_cost(int n)
 {
 	if (max_cost[n] > 0)
