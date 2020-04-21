@@ -1,4 +1,4 @@
-//https://www.acmicpc.net/problem/11726
+ï»¿//https://www.acmicpc.net/problem/11726
 #include <iostream>
 
 using namespace std;
@@ -19,7 +19,7 @@ int main()
 	D[0] = 1;
 	D[1] = 1;
 	
-	// Á¡È­½Ä : D[n] = D[n - 1] + D[n - 2]
+	// ì í™”ì‹ : D[n] = D[n - 1] + D[n - 2]
 	for (int i = 2; i <= n; i++)
 	{
 		D[i] = (D[i - 1] + D[i - 2]) % DIV;
