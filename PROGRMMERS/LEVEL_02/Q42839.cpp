@@ -27,13 +27,14 @@ void seive_of_eratosthenes(int max)
     }
 }
 
-// nCr 가지의 수 모두 구하기
+// nPr 가지의 수 모두 구하기
 void perm(const string &numbers, string output, bool visited[], int depth, int r)
 {
     if (depth == r)
     {
         int res = stoi(output);
         // numbers가 오름차순 정렬되었으므로, 이전 숫자보다 큰 수만 카운팅해도 OK
+        // 동일 숫자는 카운팅 하지 않으므로 결과적으로 nCr
         if (bf < res && !isno_prime[res])
         {
             bf = res;
@@ -66,7 +67,7 @@ int solution(string numbers) {
     // 오름차순 정렬
     sort(numbers.begin(), numbers.end());
 
-    // nCr(1 <= r <= n) 가지의 경우를 모두 계산하며
+    // nPr(1 <= r <= n) 가지의 경우를 모두 계산하며
     // 나올수 있는 소수 구하기
     const int MAX_SIZE = 7;
     bool visited[MAX_SIZE] = {0,};
