@@ -39,7 +39,7 @@ int solution(string numbers) {
     // 오름차순 정렬
     sort(numbers.begin(), numbers.end());
 
-    // 중복되지 않는 조합의 소수 찾기
+    // 중복되지 않는 조합의 소수 찾기 
     set<int> prime_set;
     do
     {
