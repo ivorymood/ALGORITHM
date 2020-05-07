@@ -20,15 +20,15 @@ int solution(vector<int> people, int limit) {
     // low와 high가 엇갈리면 종료
     while (low <= high)
     {
-        // 큰 값부터 out
-        high--;
-        cnt++;
-
         // 작은 값 + 큰 값이 limit 이하이면 작은값도 out
         if (people[low] + people[high] <= limit)
         {
             low++;
         }
+
+        // 큰 값부터 out
+        high--;
+        cnt++;
     }
 
     return cnt;
