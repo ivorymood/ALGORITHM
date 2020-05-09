@@ -16,7 +16,7 @@ unordered_map<int, int> count_map;
 	만들어진 숫자열 -> 숫자로 변환하여 map에 등록.
 	중복하지 않으면 출력
 */
-void dps(int N, int M, int depth, int sum)
+void dfs(int N, int M, int depth, int sum)
 {
 	if (depth == M)
 	{
@@ -40,7 +40,7 @@ void dps(int N, int M, int depth, int sum)
 			sum += numbers[i] * pow(10, depth);
 			output[depth] = numbers[i];
 			
-			dps(N, M, depth + 1, sum);
+			dfs(N, M, depth + 1, sum);
 			
 			sum -= numbers[i] * pow(10, depth);
 			visited[i] = false;
@@ -63,7 +63,7 @@ int main()
 
 	sort(numbers, numbers + N);
 
-	dps(N, M, 0, 0);
+	dfs(N, M, 0, 0);
 
 	return 0;
 }
