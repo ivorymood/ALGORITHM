@@ -22,6 +22,12 @@ void dfs(int N, int M, int depth, int start)
 		return;
 	}
 
+	/* 
+		비내림차순 --> 다음 숫자는 이번숫자 idx부터 조회 시작
+		중복 허용X --> 한번 숫자를 쓸 때마다 개수 - 1 
+		아직 숫자를 꺼내 쓸 수 있으면 선택 가능. 
+	*/
+
 	for (int i = start; i < N; ++i)
 	{
 		if (cnt[i] > 0)
@@ -54,6 +60,8 @@ int main()
 	int num = -1;
 	int idx = 0;
 
+	// 각 숫자의 개수를 저장한 cnt배열 만들기 
+	// numbers배열에 중복 제거한 숫자들 저장하기
 	for (int i = 0; i < N; ++i)
 	{
 		if (num != tmp[i])
