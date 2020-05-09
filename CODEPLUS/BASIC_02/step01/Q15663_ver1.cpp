@@ -10,8 +10,6 @@ int numbers[MAX];
 int output[MAX];
 int cnt[MAX];
 
-unordered_map<int, int> count_map;
-
 void dps(int N, int M, int depth)
 {
 	if (depth == M)
