@@ -10,7 +10,7 @@ int numbers[MAX];
 int output[MAX];
 int cnt[MAX];
 
-void dps(int N, int M, int depth)
+void dfs(int N, int M, int depth)
 {
 	if (depth == M)
 	{
@@ -34,7 +34,7 @@ void dps(int N, int M, int depth)
 		{
 			--cnt[i];
 			output[depth] = numbers[i];
-			dps(N, M, depth + 1);
+			dfs(N, M, depth + 1);
 			++cnt[i];
 		}
 	}
@@ -78,7 +78,7 @@ int main()
 	}
 
 	// 중복 제거한 숫자 개수 중에서 M개 뽑기
-	dps(idx, M, 0);
+	dfs(idx, M, 0);
 
 	return 0;
 }
