@@ -13,9 +13,10 @@ bool possible(int input_order[], string &tree)
     int t_order = 1;
     for (int i = 0; i < tree.size(); ++i)
     {
+        // 선행스킬 목록에 주어진 스킬만 검사
         if (input_order[tree[i] - 'A'])
         {
-            // 트리순서가 다르면 false 리턴
+            // 선행스킬과 순서가 다르면 false 리턴
             if (input_order[tree[i] - 'A'] != t_order)
             {
                 return false;
@@ -30,7 +31,7 @@ bool possible(int input_order[], string &tree)
 
 int solution(string skill, vector<string> skill_trees) {
     
-    // 주어진 스킬트리 순서 입력
+    // 선행스킬로 주어진 스킬트리 순서 입력
     const int MAX = 26;
     int input_order[MAX] = { 0, };
     int order = 1;
