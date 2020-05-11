@@ -11,7 +11,7 @@ int M, N;
 // 오른쪽, 아래쪽, 왼쪽, 위쪽
 vector<pair<int, int>> drx = { {0, 1}, {1, 0}, {0, -1}, {-1, 0} };
 
-void bfs(vector<vector<int>> &picture, vector<int> &cnt, int x, int y)
+void dfs(vector<vector<int>> &picture, vector<int> &cnt, int x, int y)
 {
     // 해당 색 영역 개수 + 1
     ++*(cnt.end() - 1);
@@ -28,8 +28,8 @@ void bfs(vector<vector<int>> &picture, vector<int> &cnt, int x, int y)
         
         if (newX >= 0 && newX < M && newY >= 0 && newY < N && num == picture[newX][newY])
         {
-            // 다음 영역의 4방향 탐색을 위해 bfs 재귀호출
-            bfs(picture, cnt, newX, newY);
+            // 다음 영역의 4방향 탐색을 위해 dfs 재귀호출
+            dfs(picture, cnt, newX, newY);
         }
     }
 }
@@ -48,7 +48,7 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
             if (picture[i][j] > 0)
             {
                 cnt.push_back(0);
-                bfs(picture, cnt, i, j);
+                dfs(picture, cnt, i, j);
             }
         }
     }
