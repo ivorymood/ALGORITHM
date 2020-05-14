@@ -26,12 +26,7 @@ bool solution(string s)
         }
     }
 
-    if (cnt > 0)
-    {
-        return false;
-    }
-
-    return true;
+    return cnt == 0;
 }
 
 int main()
