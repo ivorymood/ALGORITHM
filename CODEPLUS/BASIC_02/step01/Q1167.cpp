@@ -5,7 +5,7 @@
 using namespace std;
 
 struct node {
-	int child, weight;
+	int to, weight;
 };
 
 int max_cost;
@@ -26,9 +26,9 @@ void dfs(vector<vector<node>> &tree, vector<bool> &visit, int now, int cost)
 	for (node c : tree[now])
 	{
 		// 방문하지 않은 자식노드면 비용을 더하고 dfs 재귀함수 호출
-		if (!visit[c.child])
+		if (!visit[c.to])
 		{
-			dfs(tree, visit, c.child, cost + c.weight);
+			dfs(tree, visit, c.to, cost + c.weight);
 		}
 	}
 }
@@ -45,18 +45,18 @@ int main()
 	vector<vector<node>> tree(V + 1, vector<node>());
 	for (int i = 1; i <= V; ++i)
 	{
-		int parent, child, weight;
-		cin >> parent;
+		int from, to, weight;
+		cin >> from;
 		while (true)
 		{
-			cin >> child;
-			if (child == -1)
+			cin >> to;
+			if (to == -1)
 			{
 				break;
 			}
 			cin >> weight;
 
-			tree[parent].push_back({child, weight});
+			tree[from].push_back({ to, weight});
 		}
 	}
 
