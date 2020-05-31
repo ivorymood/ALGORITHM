@@ -6,19 +6,17 @@ using namespace std;
 
 int root = 1;
 
-void dfs(vector<vector<int>>& tree, vector<int>& parent, vector<bool>& visit, int now)
+void dfs(vector<vector<int>>& tree, vector<int>& parent, int now)
 {
 	// 현재 노드의 자식 노드 탐색
 	for (int i = 0; i < tree[now].size(); ++i)
 	{
-		// 아직 방문하지 않았다면 
-		// -> 방문체크, parent[자식노드]에 현재노드 저장 후 dfs 재귀함수 호출
+		// 아직 방문하지 않은 parent[자식노드]에 현재노드 저장 후 dfs 재귀함수 호출
 		int next = tree[now][i];
-		if (!visit[next])
+		if (parent[next] == 0)
 		{
-			visit[next] = true;
 			parent[next] = now;
-			dfs(tree, parent, visit, next);
+			dfs(tree, parent, next);
 		}
 	}
 }
@@ -41,12 +39,12 @@ int main()
 		tree[second].push_back(first);
 	}
 
-	vector<int> parent(N + 1);
-	vector<bool> visit(N + 1);
 
 	// 깊이 우선 탐색으로 각 노드의 부모노드 찾기
-	visit[root] = true;
-	dfs(tree, parent, visit, root);
+	vector<int> parent(N + 1);
+	parent[root] = -1;
+	dfs(tree, parent, root);
+
 
 	// 2번 노드부터 부모노드 출력
 	for (int i = 2; i < parent.size(); ++i)
