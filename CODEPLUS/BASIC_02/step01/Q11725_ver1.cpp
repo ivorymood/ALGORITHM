@@ -9,14 +9,13 @@ int root = 1;
 void dfs(vector<vector<int>>& tree, vector<int>& parent, int now)
 {
 	// 현재 노드의 자식 노드 탐색
-	for (int i = 0; i < tree[now].size(); ++i)
+	for (int child : tree[now])
 	{
 		// 아직 방문하지 않은 parent[자식노드]에 현재노드 저장 후 dfs 재귀함수 호출
-		int next = tree[now][i];
-		if (parent[next] == 0)
+		if (parent[child] == 0)
 		{
-			parent[next] = now;
-			dfs(tree, parent, next);
+			parent[child] = now;
+			dfs(tree, parent, child);
 		}
 	}
 }
