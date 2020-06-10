@@ -4,15 +4,14 @@
 
 using  namespace std;
 
-// 퀸이 이동가능한 8방향
-int dr_x[] = {0, 1, 1, 1, 0, -1, -1, -1};
-int dr_y[] = {1, 1, 0, -1, -1, -1, 0, 1};
+int dr_x[] = {1, 1, 1};
+int dr_y[] = {1, 0, -1};
 int N, cnt;
 
 // 퀸이 공격 가능한 지점의 값을 +num 하기
 void check_8_ways(vector<vector<int>>& check, int x, int y, int num)
 {
-	for (int i = 0; i < 8; ++i)
+	for (int i = 0; i < 3; ++i)
 	{
 		int nx = x + dr_x[i];
 		int ny = y + dr_y[i];
