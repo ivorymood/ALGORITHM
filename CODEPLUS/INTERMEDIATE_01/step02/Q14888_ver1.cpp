@@ -10,7 +10,7 @@ using namespace std;
 int max_num = numeric_limits<int>::min();
 int min_num = numeric_limits<int>::max();
 
-// 주어진 연산자 인덱스로 계산
+// 주어진 연산자 배열로 계산
 int calc(vector<int> &nums, vector<int> &strg)
 {
 	int sum = nums[0];
