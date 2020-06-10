@@ -8,7 +8,7 @@ int dr_x[] = {1, 1, 1};
 int dr_y[] = {1, 0, -1};
 int N, cnt;
 
-// 퀸이 공격 가능한 지점의 값을 +num 하기
+// 퀸이 공격 가능한 지점의 값을 +num 하기 
 void check_8_ways(vector<vector<int>>& check, int x, int y, int num)
 {
 	for (int i = 0; i < 3; ++i)
