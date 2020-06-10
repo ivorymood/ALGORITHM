@@ -8,8 +8,8 @@ int dr_x[] = {1, 1, 1};
 int dr_y[] = {1, 0, -1};
 int N, cnt;
 
-// 퀸이 공격 가능한 지점의 값을 +num 하기 
-void check_8_ways(vector<vector<int>>& check, int x, int y, int num)
+// 퀸이 공격 가능한 지점의 값을 +num 하기 (좌하향, 아래, 우하향) 
+void check_ways(vector<vector<int>>& check, int x, int y, int num)
 {
 	for (int i = 0; i < 3; ++i)
 	{
@@ -40,13 +40,13 @@ void go(vector<vector<int>>& check, int row)
 		if (check[row][i] == 0)
 		{
 			// 현재지점으로부터 퀸이 공격가능한 모든 지점에 +1
-			check_8_ways(check, row, i, 1);
+			check_ways(check, row, i, 1);
 			
 			// 다음행의 퀸을 정하기 위해 go함수 재귀호출
 			go(check, row + 1);
 			
 			// 현재지점으로부터 퀸이 공격가능한 모든 지점에 -1
-			check_8_ways(check, row, i, -1);
+			check_ways(check, row, i, -1);
 		}
 	}
 }
