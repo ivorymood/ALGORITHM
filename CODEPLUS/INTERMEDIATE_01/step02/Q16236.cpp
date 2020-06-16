@@ -63,7 +63,7 @@ pos bfs_get_next_pos(pos start, int size)
 			// 먹을 수 있는 물고기이면
 			if (map[nx][ny] > 0 && map[nx][ny] < size)
 			{
-				// 거리가 min_dst보다 크면 X
+				// 거리가 min_dist보다 크면 X
 				if (dist[nx][ny] > min_dist)
 				{
 					continue;
