@@ -11,7 +11,7 @@ using namespace std;
 int solution(vector<vector<int>> routes) {
 
     // 끝점을 기준으로 오름차순 정렬
-    sort(routes.begin(), routes.end(), [](vector<int> a, vector<int> b) {
+    sort(routes.begin(), routes.end(), [](vector<int> &a, vector<int> &b) {
         return a[1] < b[1];
         });
     
