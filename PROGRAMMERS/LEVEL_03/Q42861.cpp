@@ -59,7 +59,7 @@ int solution(int n, vector<vector<int>> costs) {
     // costs : [from, to, cost]순으로 저장된 2차원 벡터
     // 비용을 기준으로 오름차순 정렬
     sort(costs.begin(), costs.end()
-        , [&costs](vector<int> a, vector<int> b) 
+        , [&costs](vector<int> &a, vector<int> &b) 
         {
             return a[2] < b[2];
         }
