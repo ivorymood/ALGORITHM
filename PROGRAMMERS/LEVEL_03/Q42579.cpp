@@ -16,7 +16,7 @@ struct song{
 
 unordered_map<string, int> genre_cnts;
 
-bool compare(song a, song b)
+bool compare(song &a, song &b)
 {
     // 1. 장르별 플레이 횟수 내림차순
     if (genre_cnts[a.genre] != genre_cnts[b.genre])
