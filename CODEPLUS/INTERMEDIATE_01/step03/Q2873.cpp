@@ -43,7 +43,7 @@ void print_path(vector<vector<int>> &board, const pos &D, int H, int W)
 		─────┐   // 1구간
 		┌────┘ 
 		└┐┌┐┌┐   // 2구간
-		 X└┘└┘│  
+		X└┘└┘│  
 		┌────┘   // 3구간
 		└─────  
 	*/
