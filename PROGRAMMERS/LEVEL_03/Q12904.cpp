@@ -6,6 +6,18 @@
 
 using namespace std;
 
+int get_pldr_len(const string &s, int left, int right)
+{
+    int pldr = right - left - 1;
+    while (!(left < 0 || right >= s.size()) && s[left] == s[right])
+    {
+        --left;
+        ++right;
+        pldr += 2;
+    }
+    return pldr;
+}
+
 int solution(string s)
 {
     int N = s.size();
@@ -17,37 +29,17 @@ int solution(string s)
     */
     for (int i = 0; i < N - 1; ++i)
     {
-        // abba 형태 팰린드롬
+
+        // abba 형태 팰린드롬 : 바로 다음문자부터 대칭 시작
         if (i + 1 < N && s[i] == s[i + 1])
         {
-            int pldr = 0;
-            int l = i;
-            int r = i + 1;
-
-            while (!(l < 0 || r >= N) && s[l] == s[r])
-            {
-                --l;
-                ++r;
-                pldr += 2;
-            }
-
-            answer = max(pldr, answer);
+            answer = max(get_pldr_len(s, i, i + 1), answer);
         }
-        // abcba 형태 팰린드롬
+
+        // abcba 형태 팰린드롬 : 문자 하나를 사이에 두고 그다음부터 대칭 시작
         if (i + 2 < N && s[i] == s[i + 2])
         {
-            int pldr = 1;
-            int l = i;
-            int r = i + 2;
-
-            while (!(l < 0 || r >= N) && s[l] == s[r])
-            {
-                --l;
-                ++r;
-                pldr += 2;
-            }
-
-            answer = max(pldr, answer);
+            answer = max(get_pldr_len(s, i, i + 2), answer);
         }
     }
 
