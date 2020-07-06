@@ -11,7 +11,7 @@ struct member {
 };
 
 // age순, 입력된 순서대로 정렬
-bool compare(member &A, member &B)
+bool compare(const member &A, const member &B)
 {
 	if (A.age != B.age)
 	{
