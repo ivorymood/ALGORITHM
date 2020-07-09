@@ -5,7 +5,7 @@ using namespace std;
 
 bool next_permutation(int numbers[], int N)
 {
-	// i : 뒤에서부터 시작 되는 가장 긴 감소 수열의 마지막 인덱스
+	// i : 뒤에서부터 시작 되는 가장 긴 증가 수열의 마지막 인덱스
 	int i = N - 1;
 	while (i > 0 && numbers[i - 1] > numbers[i])
 	{
