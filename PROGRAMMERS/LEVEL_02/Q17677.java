@@ -13,8 +13,8 @@ public class Q17677 {
         aa1+aa2	    AAAA12	    43690
         E=M*C^2	    e=m*c^2	    65536
          */
-        String str1 = "E=M*C^2";
-        String str2 = "e=m*c^2";
+        String str1 = "handshake";
+        String str2 = "shake hands";
         System.out.println(solution(str1, str2));
     }
 
@@ -27,19 +27,11 @@ public class Q17677 {
 
         for (int i = 0; i < str1.length() - 1; ++i) {
             String tmp = str1.substring(i, i + 2);
-            if (map1.containsKey(tmp)) {
-                map1.put(tmp, map1.get(tmp) + 1);
-            } else {
-                map1.put(tmp, 1);
-            }
+            map1.put(tmp, map1.getOrDefault(tmp, 0) + 1);
         }
         for (int i = 0; i < str2.length() - 1; ++i) {
             String tmp = str2.substring(i, i + 2);
-            if (map2.containsKey(tmp)) {
-                map2.put(tmp, map2.get(tmp) + 1);
-            } else {
-                map2.put(tmp, 1);
-            }
+            map2.put(tmp, map2.getOrDefault(tmp, 0) + 1);
         }
 
         double minSum = 0;
