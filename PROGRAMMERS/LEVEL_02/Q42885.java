@@ -1,8 +1,6 @@
 package PROGRAMMERS.LEVEL_02;
 
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
 
 public class Q42885 {
 
