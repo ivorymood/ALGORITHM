@@ -1,4 +1,5 @@
 // https://programmers.co.kr/learn/courses/30/lessons/84325
+// 직업군 추천하기
 package PROGRAMMERS.WEEKLY_CHALLENGE;
 
 import java.util.*;
@@ -15,39 +16,30 @@ public class Q84325 {
 
     public static String solution(String[] table, String[] languages, int[] preference) {
 
-        Map<String, String[]> tableMap = new HashMap<>();
-        for (String line : table) {
-
-            String[] parts = line.split(" ");
-            tableMap.put(parts[0], Arrays.copyOfRange(parts, 1, 6));
-        }
-
         Map<String, Integer> pointMap = new HashMap<>();
         for (int i = 0; i < languages.length; ++i) {
             pointMap.put(languages[i], preference[i]);
         }
 
-        Map<String, Integer> sumMap = new HashMap<>();
-        for (Map.Entry<String, String[]> entry: tableMap.entrySet()) {
-            String[] points = entry.getValue();
-            int sum = 0;
-            for (int i = 0; i < points.length; ++i) {
+        String answer = "";
+        int maxScore = 0;
+        for (String line : table) {
 
-                if (pointMap.containsKey(points[i])) {
-                    sum += pointMap.get(points[i]) * (points.length - 1 - i);
+            String[] parts = line.split(" ");
+            int sum = 0;
+            for (int i = 1; i < parts.length; ++i) {
+                if (pointMap.containsKey(parts[i])) {
+                    sum += pointMap.get(parts[i]) * (parts.length - i);
                 }
             }
-            sumMap.put(entry.getKey(), sum);
+
+            if (maxScore < sum
+            || (maxScore == sum && answer.compareTo(parts[0]) > 0)) {
+                maxScore = sum;
+                answer = parts[0];
+            }
         }
 
-        List<Map.Entry<String, Integer>> sumList = new ArrayList<>(sumMap.entrySet());
-        Collections.sort(sumList, (e1, e2) -> {
-            if (e1.getValue() != e2.getValue()) {
-                return e2.getValue() - e1.getValue();
-            }
-            return e1.getKey().compareTo(e2.getKey());
-        });
-
-        return sumList.get(0).getKey();
+        return answer;
     }
 }
